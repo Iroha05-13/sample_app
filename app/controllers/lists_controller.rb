@@ -6,7 +6,7 @@ class ListsController < ApplicationController
   def create
     list = List.new(list_params)
     list.save
-    redirect_to list_path(list.)
+    redirect_to list_path(list.id)
   end
 
   def index
@@ -18,6 +18,7 @@ class ListsController < ApplicationController
   end
 
   def edit
+    @list = List.find(params[:id])
   end
 
   private
